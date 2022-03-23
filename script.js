@@ -56,11 +56,12 @@ function DoesntContainFilter(words) {
     var valid_words = [];
     words.forEach(element => {
         any_negative_hit = false;
-        negative_letters.forEach(negative_letter => {
+        for (i = 0; i < negative_letters.length; i++) {
+            negative_letter = negative_letters[i];
             if (element.includes(negative_letter)) {
                 any_negative_hit = true;
             }
-        })
+        }
         if (!any_negative_hit) {
             valid_words.push(element);
         }
