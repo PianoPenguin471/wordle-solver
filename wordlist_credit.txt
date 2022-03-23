@@ -1,0 +1,5 @@
+curl -s https://raw.githubusercontent.com/tabatkins/wordle-list/main/words
+
+from 
+
+https://github.com/tabatkins/wordle-list

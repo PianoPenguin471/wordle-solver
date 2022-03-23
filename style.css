@@ -1,0 +1,13 @@
+div input {
+    width: 5%;
+    height: 5;
+}
+div {
+    align-items: center;
+}
+#row_1 input {
+    background-color: green;
+}
+#wrong_place input {
+    background-color: yellow;
+}
