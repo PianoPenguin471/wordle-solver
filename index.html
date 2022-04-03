@@ -9,6 +9,10 @@
 </head>
 <body>
     <script src="script.js"></script>
+
+    <div class="description">
+        Letters present in the word and in the right place
+    </div>
     <div id="row_1">
         <input type="text" id="letter_1">
         <input type="text" id="letter_2">
@@ -16,6 +20,12 @@
         <input type="text" id="letter_4" value="i">
         <input type="text" id="letter_5">
     </div>
+
+
+    <div class="description">
+        Letters present in the word but in the wrong place
+    </div>
+
     <div id="wrong_place">
         <input type="text" id="wrong_pos_letter_1" value="p">
         <input type="text" id="wrong_pos_letter_2" value="u">
@@ -23,8 +33,16 @@
         <input type="text" id="wrong_pos_letter_4">
         <input type="text" id="wrong_pos_letter_5" value="i">
     </div>
-    <input type="text" id="negative_letters">
-    <button onclick="findWords()">Find Words</button>
+    <div class="description">
+        Letters not present in word 
+    </div>
+    <div id="not_present">
+        <input type="text" id="negative_letters">
+    </div>
+    <div class="buttons">
+        <button onclick="findWords()">Find Words</button>
+        <button onclick="clearInputs()">Clear Inputs</button>
+    </div>
 
     <div>
         <ul id="results">

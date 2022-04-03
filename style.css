@@ -17,3 +17,18 @@ div input {
 #wrong_place input {
     background-color: #c9b458;
 }
+
+#not_present input {
+    width: 76%;
+    background-color: lightslategray;
+}
+
+.buttons {
+    align-items: center;
+}
+
+
+.description {
+    height: 500%;
+    justify-content: bottom;
+}

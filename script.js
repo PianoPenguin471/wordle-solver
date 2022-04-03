@@ -1,4 +1,22 @@
 
+function clearInputs() {
+
+    document.getElementById("letter_1").value = "";
+    document.getElementById("letter_2").value = "";
+    document.getElementById("letter_3").value = "";
+    document.getElementById("letter_4").value = "";
+    document.getElementById("letter_5").value = "";
+
+    document.getElementById("wrong_pos_letter_1").value = "";
+    document.getElementById("wrong_pos_letter_2").value = "";
+    document.getElementById("wrong_pos_letter_3").value = "";
+    document.getElementById("wrong_pos_letter_4").value = "";
+    document.getElementById("wrong_pos_letter_5").value = "";
+
+    document.getElementById("negative_letters").value = "";
+
+}
+
 function findWords() {
 
     var positive_letters = "";
