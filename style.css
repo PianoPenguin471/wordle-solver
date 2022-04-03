@@ -1,13 +1,19 @@
 div input {
-    width: 5%;
-    height: 5;
-}
-div {
+    width: 15%;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 #row_1 input {
-    background-color: green;
+    background-color: #6aaa64;
 }
 #wrong_place input {
-    background-color: yellow;
+    background-color: #c9b458;
 }
