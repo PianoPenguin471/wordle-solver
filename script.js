@@ -1,4 +1,4 @@
-
+window.addEventListener("input", findWords);
 function clearInputs() {
 
     document.getElementById("letter_1").value = "";
@@ -20,11 +20,11 @@ function clearInputs() {
 function findWords() {
 
     var positive_letters = "";
-    positive_letters += document.getElementById("wrong_pos_letter_1").value;
-    positive_letters += document.getElementById("wrong_pos_letter_2").value;
-    positive_letters += document.getElementById("wrong_pos_letter_3").value;
-    positive_letters += document.getElementById("wrong_pos_letter_4").value;
-    positive_letters += document.getElementById("wrong_pos_letter_5").value;
+    positive_letters += document.getElementById("wrong_pos_letter_1").value.toLowerCase();
+    positive_letters += document.getElementById("wrong_pos_letter_2").value.toLowerCase();
+    positive_letters += document.getElementById("wrong_pos_letter_3").value.toLowerCase();
+    positive_letters += document.getElementById("wrong_pos_letter_4").value.toLowerCase();
+    positive_letters += document.getElementById("wrong_pos_letter_5").value.toLowerCase();
 
 
     var valid_words = PositionalFilter(word_list);
@@ -36,14 +36,18 @@ function findWords() {
     valid_words = ContainsFilter(valid_words, positive_letters); 
     console.log(valid_words);
 
-    var ul = document. getElementById("results");
+    var ul = document.getElementById("results");
     ul.innerHTML = "";
-
-    valid_words.forEach(element => {
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode(element));
-        ul.appendChild(li);
-    });
+    if (valid_words.length == 0) {
+        ul.appendChild(document.createTextNode("No matching words"))
+    }
+    else {
+        valid_words.forEach(element => {
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(element));
+            ul.appendChild(li);
+        });
+    }
 }
 
 function ContainsFilter(words, positive_letters) {
@@ -67,7 +71,7 @@ function ContainsFilter(words, positive_letters) {
 }
 
 function DoesntContainFilter(words) {
-    var negative_letters = document.getElementById("negative_letters").value;
+    var negative_letters = document.getElementById("negative_letters").value.toLowerCase();
     console.log("Negative letters:  " + negative_letters);
     if (!negative_letters) return words;
 
@@ -89,11 +93,11 @@ function DoesntContainFilter(words) {
 
 function PositionalFilter(words) {
     var str = "_____";
-    str = (document.getElementById("letter_1").value || ".") 
-        + (document.getElementById("letter_2").value || ".")
-        + (document.getElementById("letter_3").value || ".")
-        + (document.getElementById("letter_4").value || ".")
-        + (document.getElementById("letter_5").value || ".");
+    str = (document.getElementById("letter_1").value.toLowerCase() || ".") 
+        + (document.getElementById("letter_2").value.toLowerCase() || ".")
+        + (document.getElementById("letter_3").value.toLowerCase() || ".")
+        + (document.getElementById("letter_4").value.toLowerCase() || ".")
+        + (document.getElementById("letter_5").value.toLowerCase() || ".");
     console.log(str);
     const regex = new RegExp("^" + str);
     var valid_words = [];
@@ -107,11 +111,11 @@ function PositionalFilter(words) {
 
 function NegativePositionalFilter(words) {
     var str = "_____";
-    str = (document.getElementById("wrong_pos_letter_1").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_1").value + "]") 
-        + (document.getElementById("wrong_pos_letter_2").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_2").value + "]") 
-        + (document.getElementById("wrong_pos_letter_3").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_3").value + "]") 
-        + (document.getElementById("wrong_pos_letter_4").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_4").value + "]") 
-        + (document.getElementById("wrong_pos_letter_5").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_5").value + "]") 
+    str = (document.getElementById("wrong_pos_letter_1").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_1").value.toLowerCase() + "]") 
+        + (document.getElementById("wrong_pos_letter_2").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_2").value.toLowerCase() + "]") 
+        + (document.getElementById("wrong_pos_letter_3").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_3").value.toLowerCase() + "]") 
+        + (document.getElementById("wrong_pos_letter_4").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_4").value.toLowerCase() + "]") 
+        + (document.getElementById("wrong_pos_letter_5").value == null ? "." : "[^" + document.getElementById("wrong_pos_letter_5").value.toLowerCase() + "]") 
     console.log(str);
     const regex = new RegExp("^" + str);
     var valid_words = [];
