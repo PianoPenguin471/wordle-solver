@@ -15,6 +15,7 @@ function clearInputs() {
 
     document.getElementById("negative_letters").value = "";
 
+    findWords();  // refresh
 }
 
 function findWords() {
