@@ -10,16 +10,29 @@ div input {
     box-sizing: border-box;
     color: #ffffff;
     text-transform: uppercase;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+
+    margin-bottom: 0.5%;
 }
 #row_1 input {
-    background-color: #6aaa64;
+    background-color: #7bc274;
+    width:15%;
+    margin-right: 0.5%;
+    height: 2.5em;
+    border-radius: 15%;
 }
 #wrong_place input {
-    background-color: #c9b458;
+    background-color: #e2ca61;
+    width:15%;
+    margin-right: 0.5%;
+    height: 20%;
 }
 
 #not_present input {
-    width: 76%;
+    width: 80%;
     background-color: lightslategray;
 }
 
@@ -27,8 +40,12 @@ div input {
     align-items: center;
 }
 
-
 .description {
-    height: 500%;
-    justify-content: bottom;
+    font-size: larger;
+    margin-left: 0.5%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
 }
